@@ -17,7 +17,7 @@ import java.util.List;
 @RunWith(Parameterized.class)
 public class OrderTest {
 
-    private final List<String> colors;
+    /*private final List<String> colors;
     private String responseBody;
 
 
@@ -51,5 +51,5 @@ public class OrderTest {
     public void orderCreationTest() {
         Order order = OrderGenerator.generate(colors);
 
-    }
+    }*/
 }

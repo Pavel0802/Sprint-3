@@ -30,7 +30,7 @@ public class NewCourierTest {
         courierRequest.delete(courierId);
     }
 
-    @Test
+    @Test //проверка возможности создать курьера и невозможности создать двух одинаковых курьеров
     public void courierCanBeCreatedWithValidLoginAndNotGreateIsTwoIdenticalCourierGreated() {
         Courier courier = Courier.greatCourier();
         System.out.println("Courier:" + courier.login + " " + courier.password +" " + courier.firstName);
@@ -48,7 +48,7 @@ public class NewCourierTest {
         assertThat("CourierId is incorrect", courierId, is(not(0)));
     }
 
-    @Test
+    @Test //проверка аозможности создать курьера без обязательного поля пароль
     public void courierNotBeGreatedWithoutRequiredFieldPassword (){
         Courier courier = new Courier("asdfghjkl ", "", "123456");
         String greatWithoutRequiredField = courierRequest.greatWithoutRequiredField(courier);
@@ -56,7 +56,7 @@ public class NewCourierTest {
         assertThat(greatWithoutRequiredField, containsString("Недостаточно данных для создания учетной записи"));
 
     }
-    @Test
+    @Test //проверка возможности создать курьера без обязательного поля first Name
     public void courierNotBeGreatedWithoutRequiredFieldFirstName (){
         Courier courier = new Courier("fhdsjhjj", "weret", "");
         String greatWithoutRequiredField = courierRequest.greatWithoutRequiredField(courier);

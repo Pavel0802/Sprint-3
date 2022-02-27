@@ -29,7 +29,7 @@ public class LoginCourierTest {
         courierRequest.delete(courierId);
     }
 
-    @Test
+    @Test //проверка возможности авторизации курьера и вывода в случае успеха id курьера
     public void courierCanGreatedAndBeLogIn() {
         Courier courier = Courier.greatCourier();
         System.out.println("Courier:" + courier.login + " " + courier.password + " " + courier.firstName);
@@ -42,7 +42,7 @@ public class LoginCourierTest {
 
     }
 
-    @Test
+    @Test //проверка вывода ошибки в случае указания не всех обязательных полей
     public void courierIdWithoutRequiredField(){
         Courier courier = Courier.greatCourier();
         System.out.println("Courier:" + courier.login + " " + courier.password + " " + courier.firstName);
@@ -55,7 +55,7 @@ public class LoginCourierTest {
 
     }
 
-    @Test
+    @Test //проверка вывода ошибки в случае указания неверных регистрационных данных
     public void courierIdIncorrectField(){
         Courier courier = Courier.greatCourier();
         System.out.println("Courier:" + courier.login + " " + courier.password + " " + courier.firstName);
