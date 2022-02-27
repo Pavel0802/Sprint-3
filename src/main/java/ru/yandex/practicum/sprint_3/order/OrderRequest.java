@@ -2,7 +2,7 @@ package ru.yandex.practicum.sprint_3.order;
 
 import static io.restassured.RestAssured.given;
 
-public class OrderGreate  extends ScooterOrder {
+public class OrderRequest extends BaseData {
     public final String PATH = BASE_URL + "orders/";
 
     public String greatOrder(Order order) {

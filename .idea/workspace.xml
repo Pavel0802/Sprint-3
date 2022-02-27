@@ -4,11 +4,61 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b61d95d-d002-475e-bfd8-9f42b2d801ce" name="Changes" comment="Start">
+    <list default="true" id="1b61d95d-d002-475e-bfd8-9f42b2d801ce" name="Changes" comment="branch develop">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/026cbc13-639d-40b5-ad3a-4653e073d7ee-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/07ea1d1b-c047-4758-96e7-5db014d3d00a-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/1360764c-7ae5-4ffc-acae-d6195a2149fb-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/19c2b321-421b-43a4-8b1b-3ea5dea3f012-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/1e481e9c-a1d7-48e5-a203-fe222ff167f6-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/2cf8940a-cf1d-4aa5-9a95-01517eadb89e-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/305c60a9-fc11-476d-a40e-f720e97bb0a4-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/3cc3c15a-64fc-4bb8-af77-4c0a30ef1021-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/40d380b6-99b3-4703-a175-943f13db540d-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/4fc7d17b-54e2-4ce0-af1e-70df692aa709-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/5c3bb919-95ad-47a1-90e1-704b5ccee8f0-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/5cc71674-6b7f-473b-9839-56c8ebd44503-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/5e691a24-3d6c-47be-b339-94f3ce00a888-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/5f58d959-d1e4-4120-8c44-f4b17a88ba79-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/76a647b6-4794-4bcb-80dc-692b8929cf27-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/84bf62d8-fc37-437b-98bf-dc42688cac4d-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/869b7c44-2fdd-43cc-8e37-231df4d01c83-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/8c59e864-674e-4656-8a9e-7618b36758a2-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/8e9c9f1c-1dfd-42bb-9361-718628693c37-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/a2aa6053-e429-4aa8-a9cf-e2fa06bfc442-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/a3a9838f-f745-4d38-9070-18e7c190ef7b-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/a8d78747-116d-41a8-9700-685e325450b2-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/add72185-6034-4ea7-a6d6-802b01f9adf7-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/aeefbe8e-3946-48fb-b153-ed64e9a6334c-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/b8257cfe-ca32-4c87-bdf8-61d7e5b68a57-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/bd108cec-ea37-4b4b-864d-9ce632212e59-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/bd64ab07-2c7d-4b60-b1fe-1d1d2341bfb3-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/c665576b-0348-4a6a-8dc2-d4ff255139c1-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/c8a33a0e-3fed-43aa-9220-3a53081faac9-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/d0e5b034-8e3d-4a38-8b09-c9785c8efcba-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/d29b3a93-a724-4955-9262-1d98c8f12411-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/d2ecbf3d-02ee-49b1-902d-0f5d2b3a9e7a-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/da0fc845-4adf-4766-81d1-53736d8c3591-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/dd6acb4f-5341-44c7-b75c-dc106b4f81ab-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/e2d4f67e-1dc7-4e99-9018-9fd37982b607-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/e4371893-1cf0-467a-85a5-d3fc84710c9b-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/ebb7a990-fe85-4539-b93c-41cb215830f2-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/ed7abee9-b64a-48f2-83e2-a161d733a269-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/edceef5e-4694-4dec-a7ec-4899cd2bae75-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/f14758d1-94c0-4f69-b822-bfa1cc714d0a-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/f4bb2add-0af7-4e43-b652-7db36183d6c7-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/f9b0a738-e806-4e22-9170-3762ffa5b288-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/fa8efac8-054c-4890-9a82-2879043c7106-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/sprint_3/order/OrderGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/sprint_3/LoginCourierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/sprint_3/LoginCourierTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/sprint_3/NewCourierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/sprint_3/NewCourierTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/sprint_3/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/sprint_3/order/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/sprint_3/order/OrderBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/sprint_3/order/OrderGreate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/sprint_3/order/OrderRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/sprint_3/order/ScooterOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/sprint_3/order/BaseData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/sprint_3/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/sprint_3/OrderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/yandex/practicum/sprint_3/order/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/yandex/practicum/sprint_3/order/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/yandex/practicum/sprint_3/order/OrderBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/yandex/practicum/sprint_3/order/OrderBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ru/yandex/practicum/sprint_3/OrderTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ru/yandex/practicum/sprint_3/OrderTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,16 +76,21 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="25eODwp5kfolYq8QOocpxpQw10g" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Desktop/Sprint_3-develop" />
   </component>
-  <component name="RunManager" selected="JUnit.LoginCourierTest">
+  <component name="RunManager" selected="JUnit.OrderTest.orderCanBeCreatedWithValidFild">
     <configuration name="LoginCourierTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sprint-3" />
       <extension name="coverage">
@@ -66,8 +121,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OrderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sprint-3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.yandex.practicum.sprint_3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.yandex.practicum.sprint_3" />
+      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.sprint_3.OrderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderTest.orderCanBeCreatedWithValidFild" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sprint-3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.yandex.practicum.sprint_3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.yandex.practicum.sprint_3" />
+      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.sprint_3.OrderTest" />
+      <option name="METHOD_NAME" value="orderCanBeCreatedWithValidFild" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OrderTest.orderCanBeCreatedWithValidFild" />
+        <item itemvalue="JUnit.OrderTest" />
         <item itemvalue="JUnit.LoginCourierTest" />
         <item itemvalue="JUnit.NewCourierTest" />
       </list>
@@ -96,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645885967699</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="branch develop">
+      <created>1645938849811</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1645938849811</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -124,7 +219,9 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Start" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start" />
+    <MESSAGE value="branch develop" />
+    <option name="LAST_COMMIT_MESSAGE" value="branch develop" />
   </component>
 </project>
