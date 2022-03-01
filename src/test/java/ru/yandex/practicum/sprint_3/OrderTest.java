@@ -1,16 +1,13 @@
 package ru.yandex.practicum.sprint_3;
 
 
-import freemarker.template.utility.Constants;
 import io.qameta.allure.Description;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.TestInstance;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import ru.yandex.practicum.sprint_3.order.BaseData;
@@ -20,22 +17,50 @@ import ru.yandex.practicum.sprint_3.order.OrderRequest;
 
 import java.util.List;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.notNullValue;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 //@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @RunWith(Parameterized.class)
 public class OrderTest {
 
     /*private OrderRequest orderRequest;
-    private OrderGenerator order;
+    private OrderGenerator orderGenerator;
+    private String firstName;
+    private String lastName;
+    private String address;
+    private String metroStation;
+    private String phone;
+    private int rentTime;
+    private String deliveryDate;
+    private String comment;
+    private String color;
+
+    public OrderTest (String firstName, String lastName, String address, String metroStation, String phone, int rentTime, String deliveryDate, String comment, String color){
+        this.firstName = firstName;
+        this.lastName =lastName;
+        this.address =address;
+        this.metroStation =metroStation;
+        this.phone = phone;
+        this.rentTime = rentTime;
+        this.deliveryDate =deliveryDate;
+        this.comment =comment;
+        this.color =color;
+    }
 
     @BeforeAll
     public void setUp(){
         orderRequest = new OrderRequest();
-        //order = new Order();
+        //Order order = new Order();
+    }
+
+    @Parameterized.Parameters
+    public static Object[][] getOrderData() {
+        return new Object[][]{
+                {"qrfewg", "rgdg", "fdhd fdhdf", "4", "+79991235566", 2, "2022-03-03", "ffffff", "GREY"},
+                {"qrfewg", "rgdg", "fdhd fdhdf", "4", "+79991235566", 2, "2022-03-03", "ffffff", "BLACK"},
+                {"qrfewg", "rgdg", "fdhd fdhdf", "4", "+79991235566", 2, "2022-03-03", "ffffff", ""},
+                {"qrfewg", "rgdg", "fdhd fdhdf", "4", "+79991235566", 2, "2022-03-03", "ffffff", "GREY, BLACK"}
+        };
     }
 
     //@AfterAll
@@ -45,17 +70,10 @@ public class OrderTest {
 
     @Test //
     public void orderCanBeCreatedWithValidFild() {
-        Order order = new Order("Qfhgf", "Egjghfj", "fdh dfhs", "4", "+79991111111", 2, "2020-01-02", "ewttewtew", "GREY");
+        Order order = new Order(firstName, lastName, address, metroStation, phone, rentTime, deliveryDate, comment, color);
         String isOrderGreated = orderRequest.greatOrder(order);
         System.out.println("Order be Greated: " + isOrderGreated);
 
-
-        //courierId = courierRequest.login(CourierLogin.from(courier));
-        //System.out.println("courier Id: " + courierId);
-
-        //assertTrue(isCourierGreated, "Courier is not created");
-        assertThat(isOrderGreated, containsString("track"));
-        //assertThat("CourierId is incorrect", courierId, is(not(0)));
     }*/
 
     private final List<String> colors;
@@ -66,8 +84,9 @@ public class OrderTest {
     }
 
     @Before
+
     public void setup() {
-        RestAssured.baseURI = BaseData.BASE_URL;
+        RestAssured.baseURI = BaseData.baseURI;
     }
 
     @After
@@ -94,7 +113,7 @@ public class OrderTest {
             "с серым, с черным, серым и черным одновременно или без выбора цвета")
     public void orderCreationTest() {
         Order order = OrderGenerator.generate(colors);
-        Response response = OrderRequest.greatOrder(order.toString());
+        Response response = OrderRequest.createOrder(order.toString());
         response.then().assertThat().body("track", notNullValue()).statusCode(201);
         this.responseBody = response.body().asString();
     }
