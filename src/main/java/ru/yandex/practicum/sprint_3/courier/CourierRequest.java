@@ -10,7 +10,7 @@ public class CourierRequest extends BaseData {
     public final String PATH = BASE_URL + "courier/";
 
     @Step("Greate courier {courier}")
-    public boolean great(Courier courier) {
+    public String great(Courier courier) {
         return given()
                 .spec(getBaseSpec())
                 .body(courier)
@@ -20,7 +20,7 @@ public class CourierRequest extends BaseData {
                 .assertThat()
                 .statusCode(201)
                 .extract()
-                .path("ok");
+                .body().asString();
 
     }
     @Step("Greate two identical courier {courier}")
