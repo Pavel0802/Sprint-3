@@ -4,23 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b61d95d-d002-475e-bfd8-9f42b2d801ce" name="Changes" comment="create order">
+    <list default="true" id="1b61d95d-d002-475e-bfd8-9f42b2d801ce" name="Changes" comment="courier changes">
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/sprint_3/GetOrderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/sprint_3/courier/CourierRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/sprint_3/courier/CourierRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/sprint_3/order/BaseData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/sprint_3/order/Generator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/sprint_3/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/sprint_3/order/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/sprint_3/order/OrderGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/sprint_3/order/OrderGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/sprint_3/order/OrderRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/sprint_3/order/OrderRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/sprint_3/LoginCourierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/sprint_3/LoginCourierTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/sprint_3/NewCourierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/sprint_3/NewCourierTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/sprint_3/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/sprint_3/OrderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/yandex/practicum/sprint_3/order/BaseData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/yandex/practicum/sprint_3/order/Generator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/yandex/practicum/sprint_3/order/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/yandex/practicum/sprint_3/order/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/yandex/practicum/sprint_3/order/OrderGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/yandex/practicum/sprint_3/order/OrderGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/yandex/practicum/sprint_3/order/OrderRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/yandex/practicum/sprint_3/order/OrderRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ru/yandex/practicum/sprint_3/OrderTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ru/yandex/practicum/sprint_3/OrderTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +40,22 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Desktop/Sprint_3-develop" />
   </component>
-  <component name="RunManager" selected="JUnit.NewCourierTest">
+  <component name="RunManager" selected="JUnit.GetOrderTest">
+    <configuration name="GetOrderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sprint-3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.yandex.practicum.sprint_3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.yandex.practicum.sprint_3" />
+      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.sprint_3.GetOrderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LoginCourierTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sprint-3" />
       <extension name="coverage">
@@ -64,22 +67,6 @@
       <option name="PACKAGE_NAME" value="ru.yandex.practicum.sprint_3" />
       <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.sprint_3.LoginCourierTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoginCourierTest.courierCanGreatedAndBeLogIn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sprint-3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.yandex.practicum.sprint_3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.yandex.practicum.sprint_3" />
-      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.sprint_3.LoginCourierTest" />
-      <option name="METHOD_NAME" value="courierCanGreatedAndBeLogIn" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -132,11 +119,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GetOrderTest" />
+        <item itemvalue="JUnit.OrderTest" />
         <item itemvalue="JUnit.NewCourierTest" />
         <item itemvalue="JUnit.NewCourierTest.courierCanBeCreatedWithValidLoginAndNotGreateIsTwoIdenticalCourierGreated" />
         <item itemvalue="JUnit.LoginCourierTest" />
-        <item itemvalue="JUnit.LoginCourierTest.courierCanGreatedAndBeLogIn" />
-        <item itemvalue="JUnit.OrderTest" />
       </list>
     </recent_temporary>
   </component>
@@ -191,7 +178,21 @@
       <option name="project" value="LOCAL" />
       <updated>1646164745412</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="courier changes">
+      <created>1646636034221</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1646636034221</updated>
+    </task>
+    <task id="LOCAL-00008" summary="courier changes">
+      <created>1646636051481</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1646636051481</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -223,6 +224,18 @@
     <MESSAGE value="Start" />
     <MESSAGE value="branch develop" />
     <MESSAGE value="create order" />
-    <option name="LAST_COMMIT_MESSAGE" value="create order" />
+    <MESSAGE value="courier changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="courier changes" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/yandex/practicum/sprint_3/order/OrderRequest.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

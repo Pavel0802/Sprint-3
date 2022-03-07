@@ -1,7 +1,6 @@
 package ru.yandex.practicum.sprint_3;
 
 
-import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -11,7 +10,6 @@ import ru.yandex.practicum.sprint_3.order.OrderRequest;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.notNullValue;
 
 
 @RunWith(Parameterized.class)
