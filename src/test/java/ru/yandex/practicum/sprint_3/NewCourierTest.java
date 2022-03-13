@@ -28,7 +28,7 @@ public class NewCourierTest {
         courierRequest.delete(courierId);
     }
 
-    @Test //проверка возможности создать курьера и невозможности создать двух одинаковых курьеров
+    @Test //проверка возможности создать курьера и невозможности создать двух одинаковых курьеров, запрос возвращает код ответа "201" с телом ответа "ok":true
     public void courierCanBeCreatedWithValidLoginAndNotGreateIsTwoIdenticalCourierGreated() {
         Courier courier = Courier.greatCourier();
         String isCourierGreated = courierRequest.great(courier);
@@ -39,12 +39,11 @@ public class NewCourierTest {
         assertThat(isTwoIdenticalCourierGreated, containsString("Этот логин уже используется. Попробуйте другой."));
     }
 
-    @Test //проверка аозможности создать курьера без обязательного поля пароль
+    @Test //проверка возможности создать курьера без обязательного поля пароль
     public void courierNotBeGreatedWithoutRequiredFieldPassword() {
         Courier courier = Courier.greatCourier();
         Courier courier2 = new Courier(courier.login, "", courier.firstName);
         String greatWithoutRequiredField = courierRequest.greatWithoutRequiredField(courier2);
-        System.out.println(greatWithoutRequiredField);
         assertThat(greatWithoutRequiredField, containsString("Недостаточно данных для создания учетной записи"));
     }
 
@@ -53,7 +52,6 @@ public class NewCourierTest {
         Courier courier = Courier.greatCourier();
         Courier courier2 = new Courier("", courier.password, courier.firstName);
         String greatWithoutRequiredField = courierRequest.greatWithoutRequiredField(courier2);
-        System.out.println(greatWithoutRequiredField);
         assertThat(greatWithoutRequiredField, containsString("Недостаточно данных для создания учетной записи"));
     }
 
@@ -62,10 +60,8 @@ public class NewCourierTest {
         Courier courier = Courier.greatCourier();
         Courier courier2 = new Courier(courier.login, courier.password, "");
         String greatWithoutRequiredField = courierRequest.greatWithoutRequiredField(courier2);
-        System.out.println(greatWithoutRequiredField);
         assertThat(greatWithoutRequiredField, containsString("Недостаточно данных для создания учетной записи"));
 
     }
-
 
 }

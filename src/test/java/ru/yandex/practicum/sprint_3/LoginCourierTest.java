@@ -48,7 +48,7 @@ public class LoginCourierTest {
 
     }
 
-    @Test //проверка вывода ошибки в случае указания неверных регистрационных данных
+    @Test //проверка вывода ошибки в случае указания неверных регистрационных данных, в частности несуществующего пользователя
     public void courierIdIncorrectField() {
         Courier courier = Courier.greatCourier();
         courierRequest = new CourierRequest();

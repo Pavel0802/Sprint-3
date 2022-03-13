@@ -9,7 +9,7 @@ public class CourierRequest extends BaseData {
 
     public final String PATH = BASE_URL + "courier/";
 
-    @Step("Greate courier {courier}")
+    //@Step("Greate courier {courier}")
     public String great(Courier courier) {
         return given()
                 .spec(getBaseSpec())
@@ -23,7 +23,8 @@ public class CourierRequest extends BaseData {
                 .body().asString();
 
     }
-    @Step("Greate two identical courier {courier}")
+
+    //@Step("Greate two identical courier {courier}")
     public String greatTwoIdentical(Courier courier) {
         return given()
                 .spec(getBaseSpec())
@@ -37,7 +38,7 @@ public class CourierRequest extends BaseData {
                 .body().asString();
     }
 
-    @Step("Greate courier without required field {courier}")
+    //@Step("Greate courier without required field {courier}")
     public String greatWithoutRequiredField(Courier courier) {
         return given()
                 .spec(getBaseSpec())
@@ -51,7 +52,7 @@ public class CourierRequest extends BaseData {
                 .body().asString();
     }
 
-    @Step("Login as {courierLogin}")
+    //@Step("Login as {courierLogin}")
     public int login(CourierLogin courierLogin) {
         return given()
                 .spec(getBaseSpec())
@@ -64,7 +65,8 @@ public class CourierRequest extends BaseData {
                 .extract()
                 .path("id");
     }
-    @Step("Login without required field {courierLogin}")
+
+    //@Step("Login without required field {courierLogin}")
     public String loginFild(CourierLogin courierLogin) {
         return given()
                 .spec(getBaseSpec())
@@ -77,7 +79,8 @@ public class CourierRequest extends BaseData {
                 .extract()
                 .body().asString();
     }
-    @Step("Login incorrect field {courierLogin}")
+
+    //@Step("Login incorrect field {courierLogin}")
     public String loginIncorrectFild(CourierLogin courierLogin) {
         return given()
                 .spec(getBaseSpec())
@@ -91,7 +94,7 @@ public class CourierRequest extends BaseData {
                 .body().asString();
     }
 
-    @Step("Delete courier {courierId}")
+    //@Step("Delete courier {courierId}")
     public boolean delete(int courierId) {
         return given()
                 .spec(getBaseSpec())
@@ -103,6 +106,5 @@ public class CourierRequest extends BaseData {
                 .extract()
                 .path("ok");
     }
-
 
 }

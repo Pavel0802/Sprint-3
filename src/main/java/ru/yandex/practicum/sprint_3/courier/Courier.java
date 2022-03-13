@@ -17,7 +17,6 @@ public class Courier {
     public Courier() {
     }
 
-
     public static Courier greatCourier() {
 
         // с помощью библиотеки RandomStringUtils генерируем логин
