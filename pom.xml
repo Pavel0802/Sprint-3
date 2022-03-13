@@ -8,6 +8,19 @@
     <artifactId>Sprint-3</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <rest-assured.version>4.5.1</rest-assured.version>
+        <junit.version>4.13.2</junit.version>
+        <gson.version>2.9.0</gson.version>
+        <aspectj.version>1.9.7</aspectj.version>
+        <allure.version>2.17.3</allure.version>
+        <allure-maven.version>2.10.0</allure-maven.version>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.google.code.gson</groupId>
@@ -22,7 +35,7 @@
         <!-- модуль взаимодействия Allure и Junit -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-junit5</artifactId>
+            <artifactId>allure-junit4</artifactId>
             <version>${allure.version}</version>
         </dependency>
         <dependency>
@@ -37,15 +50,10 @@
             <version>${junit.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.github.javafaker</groupId>
-            <artifactId>javafaker</artifactId>
-            <version>1.0.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.20</version>
-            <scope>provided</scope>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.8.2</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
     <build>
@@ -61,7 +69,7 @@
                     <systemProperties>
                         <property>
                             <name>allure.results.directory</name>
-                            <value>${project.build.directory}/allure-results</value>
+                            <value>${project.build.directory}/target/allure-results</value>
                         </property>
                     </systemProperties>
                 </configuration>
@@ -79,23 +87,12 @@
                 <version>${allure-maven.version}</version>
                 <configuration>
                     <reportVersion>${allure.version}</reportVersion>
-                    <allureDownloadUrl>https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/${allure.version}/allure-commandline-${allure.version}.zip</allureDownloadUrl>
+                    <allureDownloadUrl>
+                        https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/${allure.version}/allure-commandline-${allure.version}.zip
+                    </allureDownloadUrl>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-    <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <rest-assured.version>4.5.0</rest-assured.version>
-        <junit.version>4.13.2</junit.version>
-        <gson.version>2.9.0</gson.version>
-        <aspectj.version>1.9.7</aspectj.version>
-        <allure.version>2.17.2</allure.version>
-        <allure-maven.version>2.10.0</allure-maven.version>
-        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
-    </properties>
-
 
 </project>

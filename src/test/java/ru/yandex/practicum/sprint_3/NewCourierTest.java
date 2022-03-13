@@ -18,7 +18,6 @@ public class NewCourierTest {
     private CourierRequest courierRequest;
     private int courierId;
 
-
     @BeforeAll
     public void setUp() {
         courierRequest = new CourierRequest();
@@ -38,7 +37,6 @@ public class NewCourierTest {
 
         assertThat(isCourierGreated, containsString("\"ok\":true"));
         assertThat(isTwoIdenticalCourierGreated, containsString("Этот логин уже используется. Попробуйте другой."));
-
     }
 
     @Test //проверка аозможности создать курьера без обязательного поля пароль
@@ -50,7 +48,7 @@ public class NewCourierTest {
         assertThat(greatWithoutRequiredField, containsString("Недостаточно данных для создания учетной записи"));
     }
 
-    @Test //проверка аозможности создать курьера без обязательного поля логин
+    @Test //проверка возможности создать курьера без обязательного поля логин
     public void courierNotBeGreatedWithoutRequiredFieldLogin() {
         Courier courier = Courier.greatCourier();
         Courier courier2 = new Courier("", courier.password, courier.firstName);

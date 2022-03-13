@@ -8,6 +8,8 @@ import ru.yandex.practicum.sprint_3.order.Order;
 import ru.yandex.practicum.sprint_3.order.OrderGenerator;
 import ru.yandex.practicum.sprint_3.order.OrderRequest;
 
+import java.util.List;
+
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -15,30 +17,21 @@ import static org.hamcrest.MatcherAssert.assertThat;
 @RunWith(Parameterized.class)
 public class OrderTest {
 
-    private String color;
+    private final List<String> color;
 
-
-    public OrderTest(String color) {
+    public OrderTest(List<String> color) {
         this.color = color;
     }
-
-    /*@After
-    public void destroy() {
-        if (responseBody != null) {
-            //api отмены заказа не работает, но во всяком случае написал код отмены тестовых действий
-            OrderRequest.cancelOrder(responseBody).thenReturn();
-        }*/
 
     @Parameterized.Parameters
     public static Object[][] getColor() {
         return new Object[][]{
-                {"GREY"},
-                {"BLACK"},
-                {" "},
-                {"GREY, BLACK"}
+                {List.of()},
+                {List.of("BLACK")},
+                {List.of("GREY")},
+                {List.of("GREY", "BLACK")}
         };
     }
-
 
     @Test
     public void orderCanBeCreatedWithValidFild() {
@@ -50,7 +43,5 @@ public class OrderTest {
         assertThat(isOrderGreated, containsString("track"));
 
     }
-
-
 
 }

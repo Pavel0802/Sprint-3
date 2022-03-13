@@ -31,7 +31,7 @@ public class CourierRequest extends BaseData {
                 .when()
                 .post(PATH)
                 .then()
-                //.assertThat()
+                .assertThat()
                 .statusCode(409)
                 .extract()
                 .body().asString();
@@ -45,7 +45,7 @@ public class CourierRequest extends BaseData {
                 .when()
                 .post(PATH)
                 .then()
-                //.assertThat()
+                .assertThat()
                 .statusCode(400)
                 .extract()
                 .body().asString();
@@ -72,7 +72,7 @@ public class CourierRequest extends BaseData {
                 .when()
                 .post(PATH + "login/")
                 .then()
-                //.assertThat()
+                .assertThat()
                 .statusCode(400)
                 .extract()
                 .body().asString();
@@ -85,7 +85,7 @@ public class CourierRequest extends BaseData {
                 .when()
                 .post(PATH + "login/")
                 .then()
-                //.assertThat()
+                .assertThat()
                 .statusCode(404)
                 .extract()
                 .body().asString();

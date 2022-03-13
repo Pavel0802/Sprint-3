@@ -13,10 +13,12 @@ public class Courier {
         this.password = password;
         this.firstName = firstName;
     }
-    public Courier(){}
+
+    public Courier() {
+    }
 
 
-    public static Courier greatCourier (){
+    public static Courier greatCourier() {
 
         // с помощью библиотеки RandomStringUtils генерируем логин
         // метод randomAlphabetic генерирует строку, состоящую только из букв, в качестве параметра передаём длину строки
@@ -27,8 +29,6 @@ public class Courier {
         String courierFirstName = RandomStringUtils.randomAlphabetic(10);
 
         return new Courier(courierLogin, courierPassword, courierFirstName);
-
-
     }
 
     @Override

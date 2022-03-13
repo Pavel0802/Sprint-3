@@ -12,11 +12,7 @@ public class GetOrderTest {
     @Test
     public void getOrderTest() {
         OrderRequest orderRequest = new OrderRequest();
-        String rtrt = orderRequest.getOrder();
-        assertThat(rtrt, containsString("orders"));
-
-
-
-
+        String getOrder = orderRequest.getOrder();
+        assertThat(getOrder, containsString("orders"));
     }
 }
