@@ -1,61 +1,60 @@
 package ru.yandex.practicum.sprint_3;
 
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
 import ru.yandex.practicum.sprint_3.courier.Courier;
 import ru.yandex.practicum.sprint_3.courier.CourierLogin;
 import ru.yandex.practicum.sprint_3.courier.CourierRequest;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.notNullValue;
+
 
 public class LoginCourierTest {
 
     private CourierRequest courierRequest;
-    private int courierId;
+    Courier courier;
 
-    @BeforeAll
+    @Before
     public void setUp() {
-        courierRequest = new CourierRequest();
+        courier = Courier.greatCourier();
+        courierRequest.great(courier);
     }
 
-    @AfterAll
+    @After
     public void tearDown() {
-        courierRequest.delete(courierId);
+        JsonElement id = courierRequest.login(CourierLogin.from(courier)).thenReturn()
+                .body().as(JsonObject.class).get("id");
+        if (id != null) {
+            CourierRequest.delete(id.getAsString()).thenReturn();
+        }
     }
 
     @Test //проверка возможности авторизации курьера и вывода в случае успеха id курьера
     public void courierCanGreatedAndBeLogIn() {
-        Courier courier = Courier.greatCourier();
-        courierRequest = new CourierRequest();
-        courierRequest.great(courier);
-        courierId = courierRequest.login(CourierLogin.from(courier));
-        System.out.println(courierId);
-        assertThat("CourierId is incorrect", courierId, is(not(0)));
-
+        courierRequest.login(CourierLogin.from(courier)).then().assertThat()
+                .body("id", notNullValue())
+                .statusCode(200);
     }
 
-    @Test //проверка вывода ошибки в случае указания не всех обязательных полей
+    @Test //проверка вывода ошибки в случае указания не всех обязательных полей, без
     public void courierIdWithoutRequiredField() {
-        Courier courier = Courier.greatCourier();
-        courierRequest = new CourierRequest();
-        courierRequest.great(courier);
         CourierLogin courierLogin = new CourierLogin(courier.login, "");
-        String courierIdwithoutPassword = courierRequest.loginFild(courierLogin);
-        assertThat(courierIdwithoutPassword, containsString("Недостаточно данных для входа"));
-
+        courierRequest.login(courierLogin).then().assertThat()
+                .body("message", equalTo("Недостаточно данных для входа"))
+                .statusCode(400);
     }
 
-    @Test //проверка вывода ошибки в случае указания неверных регистрационных данных, в частности несуществующего пользователя
+    @Test
+    //проверка вывода ошибки в случае указания неверных регистрационных данных, в частности несуществующего пользователя
     public void courierIdIncorrectField() {
-        Courier courier = Courier.greatCourier();
-        courierRequest = new CourierRequest();
-        courierRequest.great(courier);
         CourierLogin courierLogin = new CourierLogin(courier.login + "111", courier.password);
-        String courierIdIncorrectLogin = courierRequest.loginIncorrectFild(courierLogin);
-        assertThat(courierIdIncorrectLogin, containsString("Учетная запись не найдена"));
-
+        courierRequest.login(courierLogin).then().assertThat()
+                .body("message", equalTo("Учетная запись не найдена"))
+                .statusCode(404);
     }
 }
