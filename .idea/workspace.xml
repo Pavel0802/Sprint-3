@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b61d95d-d002-475e-bfd8-9f42b2d801ce" name="Changes" comment="modify login test">
+    <list default="true" id="1b61d95d-d002-475e-bfd8-9f42b2d801ce" name="Changes" comment="generated surefire-reports">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-ru.yandex.practicum.sprint_3.GetOrderTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-ru.yandex.practicum.sprint_3.GetOrderTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-ru.yandex.practicum.sprint_3.LoginCourierTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-ru.yandex.practicum.sprint_3.LoginCourierTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-ru.yandex.practicum.sprint_3.OrderTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-ru.yandex.practicum.sprint_3.OrderTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/ru.yandex.practicum.sprint_3.GetOrderTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/ru.yandex.practicum.sprint_3.GetOrderTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/ru.yandex.practicum.sprint_3.LoginCourierTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/ru.yandex.practicum.sprint_3.LoginCourierTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/ru.yandex.practicum.sprint_3.OrderTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/ru.yandex.practicum.sprint_3.OrderTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ru/yandex/practicum/sprint_3/NewCourierTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ru/yandex/practicum/sprint_3/NewCourierTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/sprint_3/LoginCourierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/sprint_3/LoginCourierTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/sprint_3/NewCourierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/sprint_3/NewCourierTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/sprint_3/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/sprint_3/OrderTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +40,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Desktop/Sprint_3-develop" />
   </component>
-  <component name="RunManager" selected="JUnit.ru.yandex.practicum.sprint_3 in Sprint-3">
+  <component name="RunManager" selected="JUnit.OrderTest.orderCanBeCreatedWithValidFild">
     <configuration name="GetOrderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sprint-3" />
       <extension name="coverage">
@@ -76,21 +71,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NewCourierTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sprint-3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.yandex.practicum.sprint_3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.yandex.practicum.sprint_3" />
-      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.sprint_3.NewCourierTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="OrderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sprint-3" />
       <extension name="coverage">
@@ -102,6 +82,22 @@
       <option name="PACKAGE_NAME" value="ru.yandex.practicum.sprint_3" />
       <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.sprint_3.OrderTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderTest.orderCanBeCreatedWithValidFild" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sprint-3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.yandex.practicum.sprint_3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.yandex.practicum.sprint_3" />
+      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.sprint_3.OrderTest" />
+      <option name="METHOD_NAME" value="orderCanBeCreatedWithValidFild" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -122,11 +118,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OrderTest.orderCanBeCreatedWithValidFild" />
         <item itemvalue="JUnit.ru.yandex.practicum.sprint_3 in Sprint-3" />
         <item itemvalue="JUnit.OrderTest" />
         <item itemvalue="JUnit.GetOrderTest" />
         <item itemvalue="JUnit.LoginCourierTest" />
-        <item itemvalue="JUnit.NewCourierTest" />
       </list>
     </recent_temporary>
   </component>
@@ -223,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648279312076</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="generated surefire-reports">
+      <created>1648281860505</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1648281860505</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -260,6 +263,7 @@
     <MESSAGE value="Order Test passed" />
     <MESSAGE value="commit 1" />
     <MESSAGE value="modify login test" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify login test" />
+    <MESSAGE value="generated surefire-reports" />
+    <option name="LAST_COMMIT_MESSAGE" value="generated surefire-reports" />
   </component>
 </project>

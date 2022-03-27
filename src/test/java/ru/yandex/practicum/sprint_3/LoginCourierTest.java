@@ -41,7 +41,7 @@ public class LoginCourierTest {
                 .statusCode(200);
     }
 
-    @Test //проверка вывода ошибки в случае указания не всех обязательных полей, без
+    @Test //проверка вывода ошибки в случае указания не всех обязательных полей, без поля password
     public void courierIdWithoutRequiredField() {
         CourierLogin courierLogin = new CourierLogin(courier.login, "");
         courierRequest.login(courierLogin).then().assertThat()

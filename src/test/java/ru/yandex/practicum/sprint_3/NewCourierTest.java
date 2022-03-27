@@ -53,7 +53,6 @@ public class NewCourierTest {
     public void courierNotBeGreatWithoutRequiredFieldPassword() {
 
         Courier courier2 = new Courier(courier.login, "", courier.firstName);
-        System.out.println(courier2 + "vmesto" + courier);
         CourierRequest.great(courier2).then().assertThat()
                 .body("message", equalTo("Недостаточно данных для создания учетной записи"))
                 .statusCode(400);

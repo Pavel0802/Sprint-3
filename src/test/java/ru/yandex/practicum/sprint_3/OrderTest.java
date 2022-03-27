@@ -37,7 +37,6 @@ public class OrderTest {
     public void orderCanBeCreatedWithValidFild() {
         Order order = OrderGenerator.generate(color);
         OrderRequest orderRequest = new OrderRequest();
-        System.out.println(order);
         String isOrderGreated = orderRequest.greatOrder(order);
         System.out.println("Order be Greated: " + isOrderGreated);
         assertThat(isOrderGreated, containsString("track"));
