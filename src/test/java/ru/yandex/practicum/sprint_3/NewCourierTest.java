@@ -3,6 +3,9 @@ package ru.yandex.practicum.sprint_3;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,7 +24,7 @@ public class NewCourierTest {
 
     @Before
     public void setUp() {
-        courier = Courier.greatCourier();
+        courier = Courier.createCourier();
     }
 
     @After
@@ -33,44 +36,52 @@ public class NewCourierTest {
         }
     }
 
-
-    @Test //проверка возможности создать курьера, запрос возвращает код ответа "201" с телом ответа "ok":true
+    @Test
+    @DisplayName("Создание курьера")
+    @Description("Тест проверяет возможность создать курьера. Запрос возвращает код ответа \"201\" с телом ответа \"ok\":true")
     public void courierCanBeCreatedWithValidLogin() {
-        CourierRequest.great(courier).then().assertThat()
+        CourierRequest.create(courier).then().assertThat()
                 .body("ok", equalTo(true))
                 .statusCode(201);
     }
 
-    @Test//проверка невозможности создать двух одинаковых курьеров
-    public void courierCanBeNotGreatIsTwoIdenticalCourier() {
-        CourierRequest.great(courier).then().statusCode(201);
-        CourierRequest.great(courier).then().assertThat()
+    @Test
+    @DisplayName("Создание двух одинаковых курьеров")
+    @Description("Тест проверяет появление ошибки в случае создания двух одинаковых курьеров")
+    public void courierCanBeNotCreateIsTwoIdenticalCourier() {
+        CourierRequest.create(courier).then().statusCode(201);
+        CourierRequest.create(courier).then().assertThat()
                 .body("message", equalTo("Этот логин уже используется"))
                 .statusCode(409);
     }
 
-    @Test //проверка возможности создать курьера без обязательного поля пароль
-    public void courierNotBeGreatWithoutRequiredFieldPassword() {
+    @Test
+    @DisplayName("Создание курьера без указания поля Пароль")
+    @Description("Тест проверяет появление ошибки в случае отсутствия обязательного поля Password")
+    public void courierNotBeCreateWithoutRequiredFieldPassword() {
 
         Courier courier2 = new Courier(courier.login, "", courier.firstName);
-        CourierRequest.great(courier2).then().assertThat()
+        CourierRequest.create(courier2).then().assertThat()
                 .body("message", equalTo("Недостаточно данных для создания учетной записи"))
                 .statusCode(400);
     }
 
-    @Test //проверка возможности создать курьера без обязательного поля логин
-    public void courierNotBeGreatWithoutRequiredFieldLogin() {
+    @Test
+    @DisplayName("Создание курьера без указания поля Логин")
+    @Description("Тест проверяет появление ошибки в случае отсутствия обязательного поля Login")
+    public void courierNotBeCreateWithoutRequiredFieldLogin() {
         Courier courier2 = new Courier("", courier.password, courier.firstName);
-        CourierRequest.great(courier2).then().assertThat()
+        CourierRequest.create(courier2).then().assertThat()
                 .body("message", equalTo("Недостаточно данных для создания учетной записи"))
                 .statusCode(400);
     }
 
-
-    @Test //проверка возможности создать курьера без обязательного поля first Name
-    public void courierNotBeGreatWithoutRequiredFieldFirstName() {
+    @Test
+    @DisplayName("Создание курьера без указания поля Имя")
+    @Description("Тест проверяет появление ошибки в случае отсутствия обязательного поля FirstName")
+    public void courierNotBeCreateWithoutRequiredFieldFirstName() {
         Courier courier2 = new Courier(courier.login, courier.password, "");
-        CourierRequest.great(courier2).then().assertThat()
+        CourierRequest.create(courier2).then().assertThat()
                 .statusCode(400)
                 .body("message", equalTo("Недостаточно данных для создания учетной записи"));
 

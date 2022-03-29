@@ -17,7 +17,7 @@ public class Courier {
     public Courier() {
     }
 
-    public static Courier greatCourier() {
+    public static Courier createCourier() {
 
         // с помощью библиотеки RandomStringUtils генерируем логин
         // метод randomAlphabetic генерирует строку, состоящую только из букв, в качестве параметра передаём длину строки

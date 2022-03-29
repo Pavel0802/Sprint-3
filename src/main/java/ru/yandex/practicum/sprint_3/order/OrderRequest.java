@@ -1,18 +1,20 @@
 package ru.yandex.practicum.sprint_3.order;
 
+import io.qameta.allure.Step;
 import ru.yandex.practicum.sprint_3.courier.BaseData;
 
 import static io.restassured.RestAssured.given;
 
 public class OrderRequest extends BaseData {
-    public final String PATH = BASE_URL + "orders/";
+    public final String ORDER_PATH = BASE_URL + "orders/";
 
-    public String greatOrder(Order order) {
+    @Step("Создание заказа {order}")
+    public String createOrder(Order order) {
         return given()
                 .spec(getBaseSpec())
                 .body(order)
                 .when()
-                .post(PATH)
+                .post(ORDER_PATH)
                 .then()
                 .assertThat()
                 .statusCode(201)
@@ -20,11 +22,12 @@ public class OrderRequest extends BaseData {
                 .body().asString();
     }
 
+    @Step("Вывод списка заказов")
     public String getOrder() {
         return given()
                 .spec(getBaseSpec())
                 .when()
-                .get(PATH)
+                .get(ORDER_PATH)
                 .then()
                 .assertThat()
                 .statusCode(200)

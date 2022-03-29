@@ -1,6 +1,8 @@
 package ru.yandex.practicum.sprint_3;
 
 
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -34,12 +36,14 @@ public class OrderTest {
     }
 
     @Test
-    public void orderCanBeCreatedWithValidFild() {
+    @DisplayName("Создание заказа с различными цветами")
+    @Description("Тест проверяет возможность создания заказа с различными цветами и без указания цвета, а также вывода в случае успеха track заказа")
+    public void orderCanBeCreatedWithValidField() {
         Order order = OrderGenerator.generate(color);
         OrderRequest orderRequest = new OrderRequest();
-        String isOrderGreated = orderRequest.greatOrder(order);
-        System.out.println("Order be Greated: " + isOrderGreated);
-        assertThat(isOrderGreated, containsString("track"));
+        String isOrderCreated = orderRequest.createOrder(order);
+        System.out.println("Order be Created: " + isOrderCreated);
+        assertThat(isOrderCreated, containsString("track"));
 
     }
 
