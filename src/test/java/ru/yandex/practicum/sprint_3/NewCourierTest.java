@@ -1,83 +1,89 @@
 package ru.yandex.practicum.sprint_3;
 
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
+import io.qameta.allure.junit4.DisplayName;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import ru.yandex.practicum.sprint_3.courier.Courier;
-import ru.yandex.practicum.sprint_3.courier.CourierRequest;
 import ru.yandex.practicum.sprint_3.courier.CourierLogin;
+import ru.yandex.practicum.sprint_3.courier.CourierRequest;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.hamcrest.Matchers.equalTo;
 
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class NewCourierTest {
 
     private CourierRequest courierRequest;
-    private int courierId;
+    private Courier courier;
+    private CourierLogin courierLogin;
 
-    @BeforeAll
-    public void setUp(){
-        courierRequest = new CourierRequest();
+    @Before
+    public void setUp() {
+        courier = Courier.createCourier();
     }
 
-    @AfterAll
-    public void tearDown (){
-        courierRequest.delete(courierId);
-    }
-
-    @Test
-    public void courierCanBeCreatedWithValidLoginAndNotGreateIsTwoIdenticalCourierGreated() {
-        Courier courier = Courier.greatCourier();
-        System.out.println("Courier:" + courier.login + " " + courier.password +" " + courier.firstName);
-        boolean isCourierGreated = courierRequest.great(courier);
-        System.out.println("Courier be Greated: " + isCourierGreated);
-
-        String isTwoIdenticalCourierGreated = courierRequest.greatTwoIdentical(courier);
-        System.out.println(isTwoIdenticalCourierGreated);
-
-        courierId = courierRequest.login(CourierLogin.from(courier));
-        System.out.println("courier Id: " + courierId);
-
-        assertTrue(isCourierGreated, "Courier is not created");
-        assertThat(isTwoIdenticalCourierGreated, containsString("Этот логин уже используется. Попробуйте другой."));
-        assertThat("CourierId is incorrect", courierId, is(not(0)));
+    @After
+    public void tearDown() {
+        JsonElement id = courierRequest.login(CourierLogin.from(courier)).thenReturn()
+                .body().as(JsonObject.class).get("id");
+        if (id != null) {
+            CourierRequest.delete(id.getAsString()).thenReturn();
+        }
     }
 
     @Test
-    public void courierNotBeGreatedWithoutRequiredFieldPassword (){
-        Courier courier = new Courier("asdfghjkl ", "", "123456");
-        String greatWithoutRequiredField = courierRequest.greatWithoutRequiredField(courier);
-        System.out.println(greatWithoutRequiredField);
-        assertThat(greatWithoutRequiredField, containsString("Недостаточно данных для создания учетной записи"));
-
-    }
-    @Test
-    public void courierNotBeGreatedWithoutRequiredFieldFirstName (){
-        Courier courier = new Courier("fhdsjhjj", "weret", "");
-        String greatWithoutRequiredField = courierRequest.greatWithoutRequiredField(courier);
-        System.out.println(greatWithoutRequiredField);
-        assertThat(greatWithoutRequiredField, containsString("Недостаточно данных для создания учетной записи"));
-
+    @DisplayName("Создание курьера")
+    @Description("Тест проверяет возможность создать курьера. Запрос возвращает код ответа \"201\" с телом ответа \"ok\":true")
+    public void courierCanBeCreatedWithValidLogin() {
+        CourierRequest.create(courier).then().assertThat()
+                .body("ok", equalTo(true))
+                .statusCode(201);
     }
 
     @Test
-    public void courierCanBeLogIn() {
-        Courier courier = Courier.greatCourier();
-        System.out.println("Courier:" + courier.login + " " + courier.password + " " + courier.firstName);
-        courierRequest = new CourierRequest();
-        boolean isCourierGreated = courierRequest.great(courier);
-
-        courierId = courierRequest.login(CourierLogin.from(courier));
-        System.out.println(courierId);
-
-        assertTrue(isCourierGreated);
-        assertThat("CourierId is incorrect", courierId, is(not(0)));
+    @DisplayName("Создание двух одинаковых курьеров")
+    @Description("Тест проверяет появление ошибки в случае создания двух одинаковых курьеров")
+    public void courierCanBeNotCreateIsTwoIdenticalCourier() {
+        CourierRequest.create(courier).then().statusCode(201);
+        CourierRequest.create(courier).then().assertThat()
+                .body("message", equalTo("Этот логин уже используется"))
+                .statusCode(409);
     }
 
+    @Test
+    @DisplayName("Создание курьера без указания поля Пароль")
+    @Description("Тест проверяет появление ошибки в случае отсутствия обязательного поля Password")
+    public void courierNotBeCreateWithoutRequiredFieldPassword() {
 
+        Courier courier2 = new Courier(courier.login, "", courier.firstName);
+        CourierRequest.create(courier2).then().assertThat()
+                .body("message", equalTo("Недостаточно данных для создания учетной записи"))
+                .statusCode(400);
+    }
+
+    @Test
+    @DisplayName("Создание курьера без указания поля Логин")
+    @Description("Тест проверяет появление ошибки в случае отсутствия обязательного поля Login")
+    public void courierNotBeCreateWithoutRequiredFieldLogin() {
+        Courier courier2 = new Courier("", courier.password, courier.firstName);
+        CourierRequest.create(courier2).then().assertThat()
+                .body("message", equalTo("Недостаточно данных для создания учетной записи"))
+                .statusCode(400);
+    }
+
+    @Test
+    @DisplayName("Создание курьера без указания поля Имя")
+    @Description("Тест проверяет появление ошибки в случае отсутствия обязательного поля FirstName")
+    public void courierNotBeCreateWithoutRequiredFieldFirstName() {
+        Courier courier2 = new Courier(courier.login, courier.password, "");
+        CourierRequest.create(courier2).then().assertThat()
+                .statusCode(400)
+                .body("message", equalTo("Недостаточно данных для создания учетной записи"));
+
+    }
 }

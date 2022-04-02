@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: ru.yandex.practicum.sprint_3.OrderTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 1.009 s <<< FAILURE! - in ru.yandex.practicum.sprint_3.OrderTest
+orderCanBeCreatedWithValidField[0](ru.yandex.practicum.sprint_3.OrderTest)  Time elapsed: 0.263 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <201> but was <500>.
+
+	at ru.yandex.practicum.sprint_3.OrderTest.orderCanBeCreatedWithValidField(OrderTest.java:44)
+
+orderCanBeCreatedWithValidField[3](ru.yandex.practicum.sprint_3.OrderTest)  Time elapsed: 0.219 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <201> but was <500>.
+
+	at ru.yandex.practicum.sprint_3.OrderTest.orderCanBeCreatedWithValidField(OrderTest.java:44)
+

@@ -1,70 +1,67 @@
 package ru.yandex.practicum.sprint_3;
 
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
 import ru.yandex.practicum.sprint_3.courier.Courier;
-import ru.yandex.practicum.sprint_3.courier.CourierRequest;
 import ru.yandex.practicum.sprint_3.courier.CourierLogin;
+import ru.yandex.practicum.sprint_3.courier.CourierRequest;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.notNullValue;
 
 
-//@RunWith(Parameterized.class)
 public class LoginCourierTest {
 
     private CourierRequest courierRequest;
-    private int courierId;
+    Courier courier;
 
-    @BeforeAll
+    @Before
     public void setUp() {
-        courierRequest = new CourierRequest();
+        courier = Courier.createCourier();
+        courierRequest.create(courier);
     }
 
-    @AfterAll
+    @After
     public void tearDown() {
-        courierRequest.delete(courierId);
+        JsonElement id = courierRequest.login(CourierLogin.from(courier)).thenReturn()
+                .body().as(JsonObject.class).get("id");
+        if (id != null) {
+            CourierRequest.delete(id.getAsString()).thenReturn();
+        }
     }
 
     @Test
-    public void courierCanGreatedAndBeLogIn() {
-        Courier courier = Courier.greatCourier();
-        System.out.println("Courier:" + courier.login + " " + courier.password + " " + courier.firstName);
-        courierRequest = new CourierRequest();
-        boolean isCourierGreated = courierRequest.great(courier);
-
-        courierId = courierRequest.login(CourierLogin.from(courier));
-        System.out.println(courierId);
-        assertThat("CourierId is incorrect", courierId, is(not(0)));
-
+    @DisplayName("Авторизация курьера")
+    @Description("Тест проверяет возможность авторизации курьера и вывода в случае успеха id курьера")
+    public void courierCanCreatedAndBeLogIn() {
+        courierRequest.login(CourierLogin.from(courier)).then().assertThat()
+                .body("id", notNullValue())
+                .statusCode(200);
     }
 
     @Test
-    public void courierIdWithoutRequiredField(){
-        Courier courier = Courier.greatCourier();
-        System.out.println("Courier:" + courier.login + " " + courier.password + " " + courier.firstName);
-        courierRequest = new CourierRequest();
-        boolean isCourierGreated = courierRequest.great(courier);
+    @DisplayName("Авторизация курьера без пароля")
+    @Description("Тест проверяет появление ошибки в случае указания не всех обязательных полей, без поля password")
+    public void courierIdWithoutRequiredField() {
         CourierLogin courierLogin = new CourierLogin(courier.login, "");
-        String courierIdwithoutPassword = courierRequest.loginFild(courierLogin);
-        System.out.println(courierIdwithoutPassword);
-        assertThat(courierIdwithoutPassword, containsString("Недостаточно данных для входа"));
-
+        courierRequest.login(courierLogin).then().assertThat()
+                .body("message", equalTo("Недостаточно данных для входа"))
+                .statusCode(400);
     }
 
     @Test
-    public void courierIdIncorrectField(){
-        Courier courier = Courier.greatCourier();
-        System.out.println("Courier:" + courier.login + " " + courier.password + " " + courier.firstName);
-        courierRequest = new CourierRequest();
-        boolean isCourierGreated = courierRequest.great(courier);
-        CourierLogin courierLogin = new CourierLogin(courier.login, courier.password +"111");
-        String courierIdIncorrectPassword = courierRequest.loginIncorrectFild(courierLogin);
-        System.out.println(courierIdIncorrectPassword);
-        assertThat(courierIdIncorrectPassword, containsString("Учетная запись не найдена"));
-
+    @DisplayName("Авторизация курьера с неверным логином")
+    @Description("Тест проверяет появление ошибки в случае указания неверных регистрационных данных, в частности несуществующего логина пользователя")
+    public void courierIdIncorrectField() {
+        CourierLogin courierLogin = new CourierLogin(courier.login + "111", courier.password);
+        courierRequest.login(courierLogin).then().assertThat()
+                .body("message", equalTo("Учетная запись не найдена"))
+                .statusCode(404);
     }
 }

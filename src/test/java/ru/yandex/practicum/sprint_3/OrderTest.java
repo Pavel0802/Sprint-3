@@ -1,37 +1,28 @@
 package ru.yandex.practicum.sprint_3;
 
 
-import freemarker.template.utility.Constants;
 import io.qameta.allure.Description;
-
-import io.restassured.RestAssured;
-import org.junit.After;
-import org.junit.Before;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import ru.yandex.practicum.sprint_3.order.Order;
+import ru.yandex.practicum.sprint_3.order.OrderGenerator;
+import ru.yandex.practicum.sprint_3.order.OrderRequest;
 
 import java.util.List;
+
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.MatcherAssert.assertThat;
+
 
 @RunWith(Parameterized.class)
 public class OrderTest {
 
-    private final List<String> colors;
-    private String responseBody;
+    private final List<String> color;
 
-
-    @Before
-    public void setup() {
-        RestAssured.baseURI = Constants.baseURI;
-    }
-
-    @After
-    public void destroy() {
-        if (responseBody != null) {
-            //api отмены заказа не работает, но во всяком случае написал код отмены тестовых действий
-            OrderRequestHelper.cancelOrder(responseBody).thenReturn();
-        }
+    public OrderTest(List<String> color) {
+        this.color = color;
     }
 
     @Parameterized.Parameters
@@ -45,11 +36,15 @@ public class OrderTest {
     }
 
     @Test
-    @DisplayName("Проверка создания заказа с разными цветами")
-    @Description("Проверяет создание заказа с разными вариантами выбора цвета: " +
-            "с серым, с черным, серым и черным одновременно или без выбора цвета")
-    public void orderCreationTest() {
-        Order order = OrderGenerator.generate(colors);
+    @DisplayName("Создание заказа с различными цветами")
+    @Description("Тест проверяет возможность создания заказа с различными цветами и без указания цвета, а также вывода в случае успеха track заказа")
+    public void orderCanBeCreatedWithValidField() {
+        Order order = OrderGenerator.generate(color);
+        OrderRequest orderRequest = new OrderRequest();
+        String isOrderCreated = orderRequest.createOrder(order);
+        System.out.println("Order be Created: " + isOrderCreated);
+        assertThat(isOrderCreated, containsString("track"));
 
     }
+
 }
